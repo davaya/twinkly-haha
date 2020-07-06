@@ -13,10 +13,10 @@ sequenceDiagram
 MQTT requires a topic overlay to support request-response, for a single or multiple Consumers:
 ```mermaid
 sequenceDiagram
-    Producer->>Broker: Connect and subscribe to all participants
-    Consumer1->>+Broker: Connect and subscribe to topic C1
-    Producer->>Broker: Publish Command A to topic C1
+    Producer->>Broker: Connect and subscribe to response topic R
+    Consumer1->>+Broker: Connect and subscribe to command topic C1
+    Producer->>Broker: Publish Command A to C1
     Broker->>+Consumer1: Command A
-    Consumer1->>-Broker: Publish Response A to topic R1
+    Consumer1->>-Broker: Publish Response A to R
     Broker->>Producer: Response A
 ```
