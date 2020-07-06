@@ -1,15 +1,16 @@
-# twinkly-haha
+# Twinkly-haha
 OpenC2 messages using MQTT Transfer Specification
 
-Unlike HTTP where Producer connects directly to consumer:
+## HTTP
+Using HTTP Producer connects directly to a single Consumer:
 ```mermaid
 sequenceDiagram
     Producer->>+Consumer: Command A
     Consumer->>-Producer: Response A
 ```
 
-MQTT requires a topic overlay to support request-response
-
+# MQTT
+MQTT requires a topic overlay to support request-response, for a single or multiple Consumers:
 ```mermaid
 sequenceDiagram
     Producer->>Broker: Connect and subscribe to all participants
